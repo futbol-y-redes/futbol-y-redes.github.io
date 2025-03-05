@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128391193-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128391193-1');
+</script>
+
+<html>
+	<head>
+		<title>Complex Systems & Sports Analytics</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	         <meta charset="utf-8">
+	         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body class="is-preload">
+
+  <audio src = "partido.mp3" autoplay>
+    <a href = "partido.mp3">partido.mp3</a>
+  </audio>
+
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Complex Systems & Sports Analytics</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="#">Home</a></li>
+								<li><a href="#somos">Football & Networks</a></li>
+								<li><a href="#proyectos">Projects</a></li>
+								<li><a href="#media">In the Media</a></li>
+								<li><a href="#plantilla">Members</a></li>
+								<li><a href="#footer">Contact</a></li>
+								<li><a href="http://www.futbolyredes.com">Spanish version</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>	Complex Systems & Sports Analytics</h2>
+							<p> Laboratory of Biological Networks (URJC-CTB) - <a href="http://www.ctb.upm.es"> Center for Biomedical Technology</a> - Pozuelo de Alarc&oacute;n - Madrid - Spain</p>
+							
+										<ul class="actions">
+											<li><a href="#somos" class="button">Football & Networks</a></li>
+											<li><a href="#proyectos" class="button">Projects</a></li>
+											<li><a href="#media" class="button">In the Media</a></li>
+											<li><a href="#plantilla" class="button">Members</a></li>
+											<li><a href="#footer" class="button">Contact</a></li>
+										</ul>
+							
+										<div class="row gtr-uniform">
+												<div class="col-12"><span class="image fit"><img src="images/campo.gif" alt="" /></span></div>
+									       </div>			
+									       							       
+						</div>
+
+					</section>				
+					
+						<!-- Four -->
+							<section id="somos" class="wrapper alt style1">
+								<div class="inner">
+										<h2 class="major">WHAT DO WE DO?</h2>
+										<p align="justify"><span class="image left"><img src="images/multicapa.jpg" alt="" /></span>Network Science, also known as Complex Network Theory, is based on the analysis of the structure of  networks to explain the processes occurring in them. This discipline is fostering the knowledge of countless networked systems, having applications that range from predicting trending topics on Twitter, to the spreading of epidemics or even to the early detection of neurodegenerative diseases through the analysis of brain networks. In the Laboratory of Biological Networks of the Center for Biomedical Technology (Madrid, Spain) we go one step further and apply several of the Network Science methodologies to the analysis of football/soccer. "You can't describe the behavior of what a player does on the field by looking only at its individual numbers. It is necessary to include the information of the interaction, not only with its team mates, but also with its rivals". This is the premise on which the Sciences of Complexity are based: it is not possible to analyze a complex system breaking it down into its individual parts: it must be analyzed as a whole. Paradoxically, the idea behind Complexity Sciences is being repeated, day after day, by all soccer players: "It is not me, it is the team."</p>
+										
+																				<div class="box alt">
+											<div class="row gtr-uniform">
+												<div class="col-4"><span class="image fit"><img src="images/f01.jpg" alt="" /></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/f02.jpg" alt="" /></span></div>
+												<div class="col-4"><span class="image fit"><img src="images/f03.jpg" alt="" /></span></div>
+											</div>
+										</div>
+
+									</section>
+
+								</div>
+							</div>
+
+					</section>
+
+
+
+
+						<!-- Four -->
+							<section id="proyectos" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">LAST PROJECTS</h2>
+									<p>If it has to do with Networks and Soccer, we will be there. From identifying a team's style of playing, to measuring the entropy generated during a match. Whatever you read here is already part of the past. To find out what we have right now, just contact us! </p>
+									<section class="features">
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">IDENTIFIABILITY OF A TEAM</h3>
+											<p align="justify">Identifying patterns in a team's game, or in that of an opponent, can help maximize collective performance. In collaboration with LaLiga, we have analyzed the passing matrices of all the first division teams to quantify which teams have a more defined pattern. Using the identifiability metrics, we show how it is possible to detect what teams imposed their style in a match, regardless of the result.</p>
+											<a href="https://newsletter.laliga.es/global-futbol/analysing-laliga-teams-footballing-minds" class="special">Read more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+											<h3 class="major">THE PASS-GOAL PARADOX</h3>
+											<p align="justify">Do more passes lead to more goals? In this analysis, we observe how, despite the fact that the teams that make the most passes tend to finish in the highest positions in the table, there is a fundamental factor in the relationship between passes and goals: The moment of the match we are in. Interestingly, it is at the second halves of matches when fewer passes are made ... but more goals! are scored!</p>
+											<a href="https://www.mdpi.com/2073-8994/12/6/1052" class="special">Read more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+											<h3 class="major">GUARDIOLA'S (COMPLEX) NETWORKS</h3>
+											<p align="justify">In 2009, a Barcelona under the command of Pep Guardiola, managed to win the six competitions in which they participated. Not only that. Guardiola's style of playing was a milestone in the history of football. In this work, we analyze the structure of Guardiola's Bar&ccedil;a passing networks, showing how it was different from the other LaLiga teams. This work was chosen as one of the most relevant of the year 2019 by Scientific Reports journal.</p>
+											<a href="https://www.technologyreview.com/2019/10/04/75376/network-science-reveals-the-secrets-of-the-worlds-best-soccer-team/" class="special">Read more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<h3 class="major">WHY ARE NETWORKS USEFUL IN SOCCER?</h3>
+											<p align="justify">Thanks to the Science of Networks it is possible to quantify how important a player is for the entire team, but also the alignment of a specific group of players. We can evaluate (and predict) the effects that a player's substitution would have, or even prepare a match based on the opposing team's passing network. And all of that just by applying mathematics to football...</p>
+											<a href="https://doi.org/10.3389/fpsyg.2018.01900" class="special">Read more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<h3 class="major">ENTROPY IN SOCCER</h3>
+											<p align="justify">The entropy of a system is related to the amount of disorder the system has, but also to how random its behavior is. Starting from this framework, it is possible to evaluate the spatial disorder of the soccer teams and how their organization varies throughout the match. Interestingly, teams have some properties that fluctuate very randomly, while others seem more predictable... </p>
+											<a href="https://www.mdpi.com/1099-4300/22/2/172" class="special">Read more</a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<h3 class="major">PITCH NETWORKS & FC BARCELONA</h3>
+											<p align="justify">Passing networks do not necessarily connect players. Pitch networks can also be constructed, leading to the study of the spatial properties of passing patterns. This type of networks allows to interpret the game of a team going beyond players. You can find a practical example in the study we carried out about Guardiola's Bar&ccedil;a and its organization.</p>
+											<a href="http://s512731021.mialojamiento.es/jmbuldu/files/20_diestra_csf.pdf" class="special">Read more</a>
+										</article>
+									</section>
+									<ul class="actions">
+										<li><a href="#" class="button">UP</a></li>
+									</ul>
+								</div>
+							</section>
+
+					</section>
+					
+										
+					<!-- Content -->
+							<section id="media" class="wrapper alt style1">
+								<div class="inner">
+
+									<section>
+										<h2 class="major">WHAT DO THE MEDIA SAY ABOUT US?</h2>
+										<h4> Marca (26/05/2020) <a href="https://www.marca.com/futbol/laboratorio-datos/2020/05/26/5ec8cc9de2704ee13b8b4628.html"> (THE PASS-GOAL PARADOX)</a> </h4>
+										<blockquote>"... It would be interesting to analyze if the number of passes made during a match has some kind of relationship with the number of goals, or if, on the contrary, they are independent variables. And for that we only needed data." (In Spanish)</blockquote>
+
+										<h4> UPM Magazine (27/05/2020) <a href="https://www.upm.es/?id=e244d6cf8da42710VgnVCM10000009c7648a____&prefmt=articulo&fmt=detail"> (BADMINTON IS A COMPLEX NETWORKS SPORT)</a> </h4>
+										<blockquote>"If you have the coordinates of the players' hitting positions throughout the game, it is possible to build bipartite networks, which connect areas on both sides of the court. From there, it is only a matter of analyzing them properly..." (In Spanish)</blockquote>
+
+										<h4> Marca (13/04/2020) <a href="https://www.marca.com/futbol/laboratorio-datos/2020/04/13/5e9419bce2704e31668b4590.html"> (HOW MATHEMATICS COULD HELP LA LIGA AVOID THE CORONAVIRUS)</a> </h4>
+										<blockquote>"Out model includes the network of social interaction of the players within their teams, and also the probability of becoming infected during a match, which would lead to the spread of the disease from one team to another." (In Spanish)</blockquote>										
+
+										<h4> Marca (04/03/2020) <a href="https://www.marca.com/futbol/barcelona/2020/03/04/5e5e4ac3268e3ea3158b4615.html"> (WHAT IF VALVERDE'S BAR&Ccedil;A  WAS NOT SO DIFFERENT FROM GUARDIOLA'S BAR&Ccedil;A?)</a> </h4>
+										<blockquote>"The combination of these parameters allows determining which networks are better organized with respect to their local and global robustness, as well as their ease of moving the ball from one place to another..." (In Spanish)</blockquote>
+
+										<h4> MIT Technology Review (04/10/2019) <a href="https://www.technologyreview.com/2019/10/04/75376/network-science-reveals-the-secrets-of-the-worlds-best-soccer-team/"> (Network science reveals the secrets of the world's best soccer team)</a> </h4>
+										<blockquote>"We combine the use of different network metrics to extract the particular signature of the F.C. Barcelona coached by Guardiola, which has been considered one of the best teams along football history,"</blockquote>
+										
+										<h4> QWERTY (11/11/2018) <a href="https://www.ivoox.com/164-el-futbol-teoria-redes-audios-mp3_rf_29980213_1.html"> (Audio: El f&uacute;tbol y la teor&iacute;a de las redes complejas)</a> </h4>
+										<blockquote>"... The local team is going to make the second change ... The coach chooses to introduce a player with a higher clustering coefficient ..." (Audio in Spanish)</blockquote>
+
+										<h4> El Pa&iacute;s (12/05/2017) <a href="https://elpais.com/elpais/2017/05/11/ciencia/1494513898_937273.html"> (A SCIENTIST ON THE BENCH)</a> </h4>
+										<blockquote>"This methodology, and others from the science of complexity, will transcend football and will be the basis of the analysis of any team sport. So do not forget that soon, on the bench, next to the coach, there will be a scientific."</blockquote>
+																			
+									</section>
+									
+									<ul class="actions">
+										<li><a href="#" class="button">UP</a></li>
+									</ul>
+				</section>
+					
+		
+
+
+
+					<section id="plantilla" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">MEMBERS</h2>
+
+								</div>
+					</section>
+
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/buldu.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Javier M. Buld&uacute; (Principal Investigator)</h2>
+										<p align="justify">Coordinator of the Laboratory of Biological Networks of the Center for Biomedical Technology, Javier M. Buld&uacute; is an Engineer and Doctor in Applied Physics from the Polytechnic University of Catalonia. He is an expert in nonlinear dynamics and complex systems, but especially in the application of Network Science to biological, technological and social systems. He has published more than 100 scientific papers in international peer-reviewed journals, organized international conferences and schools, and collaborated with various companies on intelligent data analysis. Javier has completed post-doctoral stays at the Center for Astrobiology and has been a visiting researcher at the University of Oxford. It has also carried out research transfer activities, collaborating with various companies in the application of Network Science to the private sector. During the last years he has specialized in data science applied to soccer, developing new metrics from methodologies of complex systems.</p>
+										<a href="http://www.complexity.es/jmbuldu/publications" class="special">Publications</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/garrido.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">David Garrido (MsC)</h2>
+										<p align="justify">Member of the URJC Complex Systems group and the UPM Biological Networks Laboratory, David Garrido has a degree in Physics and a master's degree in Theoretical Physics from the Complutense University of Madrid. After several scientific works with event data, he has specialized in tracking data analysis, always from the perspective of Network Science, which has led him to collaborate with different companies in the sports sector. He has several publications in various scientific magazines and has attended various national and international conferences. Apart from his research work, he also has experience in the business world thanks to the work he carried out at Indra as an analyst in the Asset Management department.</p>
+										<a href="http://www.ctb.upm.es" class="special">More information</a>
+									</div>
+								</div>
+							</section>
+							
+					         <!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/antequera.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Daniel Ruiz Antequera (MsC)</h2>
+										<p align="justify">Daniel R. Antequera is a Physicist from the Complutense University of Madrid and has a Master in Sports Big Data from UCAM, having completed an internship at the Sporting de Gij&oacute;n (Mareo Lab). In addition, he is currently the tactical and data analyst of CD Paracuellos (Rayo Majadahonda's subsidiary team) and is currently studying Level 1 Coach. Previously, he was an analyst at Intersoccer Madrid and CD Canillas. Among his most recent projects, Daniel is working on the search for patterns in passing networks, the definition of metrics that better explain the game and valuing actions on the pitch.</p>
+										<a href="https://twitter.com/antequera_dani" class="special">More information</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/echegoyen.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Ignacio Echegoyen (PhD)</h2>
+										<p align="justify">Ignacio Echegoyen is a Psychologist and Doctor in Biomedical Engineering from the Polytechnic University of Madrid. He specialized in methods, statistics and analysis of brain time series. His professional work has been developed mainly in the field of network neuroscience, applying techniques of analysis of complex systems to the study of the brain. He collaborates as an adviser and statistical analyst with COTERA education, and in recent years has been dedicated to the application of complex systems methodologies to football/soccer.</p>
+										<a href="https://nachoenblanco.github.io/ " class="special">More information</a>
+									</div>
+								</div>
+							</section>
+
+					<section id="four" class="wrapper alt style1">
+								<div class="inner">
+									<h2 class="major">ASSOCIATED MEMBERS</h2>
+
+								</div>
+					</section>
+
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/busquets.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Xavier Busquets (PhD)</h2>
+										<p align="justify">Javier Busquets is specialized in digital strategy, governance of innovation and digital transformation in the company. He is the director of the Executive Master in Digital Business program (in collaboration with SCU in Silicon Valley) and Digital Leadership (in association with IDC Spain). He teaches Bachelor in Global Governance, Double Degree in Business Administration and Law, MBA, Executive MBA and tailor-made programs for companies. His research interests focus on management role and innovation (in particular, the role of the chief information officer, CIO), network theory and complex systems. He has specialized in the banking, insurance and fintech, health and media sectors. Previously, he had developed executive and consulting activities at Telefónica, Retevisión, Hewlett Packard and Siebel Systems. He has extensive experience in executive training and consulting activities.</p>
+										<a href="https://www.esade.edu/profesorado/xavier.busquets" class="special">More information</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/martinez.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Johann H. Mart&iacute;nez (PhD)</h2>
+										<p align="justify">Physicist and M.Sc in Biomedical Sciences from the Universidad de los Andes. Colombia. M.Sc. Physics and Ph.D Complex Systems Physics from the Polytechnic University of Madrid. Spain. INSERM Post-doctorate-Sorbonn&eacute; Universit&eacute;, ICM Paris. France, Research Fellow Ministry of Sciences, Government of Colombia, and active member of the Interdisciplinary Group of Complex Systems (GISC) Madrid. Spain. From Complex Systems Physics, Johann works actively in Network Science, time series, nonlinear dynamics and projects related to data science in real and artificial systems (Neuroscience, Sociology, Biology, among others). He has extensive experience in transdisciplinary research, looking of novel solutions to problems involving plurality. He has worked in international interdisciplinary teams involving computer science, mathematics, physics, and applications to biological and / or social problems. He is part of the founding committee of the Latin American Conference on Complex Networks (LANET) and Organizer of the Brain Networks Satellite @NetSci.</p>
+										<a href="http://johemart.wix.com/neurocomplexity" class="special">More information</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/diestra.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Jos&eacute; Luis Herrera Diestra (PhD)</h2>
+										<p align="justify">PhD in Fundamental Physics graduated from the Universidad de Los Andes, Mérida - Venezuela. He completed postdoctoral stays at the University of Texas at Austin, Texas - United States (2012 - 2013 and 2016 - 2017) and at ICTP - SAIFR, Sao Paulo - Brazil (2017 - 2019). He currently works at the University of Texas at Austin as an Associate Investigator. His main field of research is the characterization and study of complex networks in various contexts. In this sense, Jose Luis collaborates with various groups at the national and international levels, conducting research on the effect of contact networks on the spread of infectious diseases in humans and animals; as well as the application of complex networks to evaluate individual and group performance in sports, particularly football/soccer.</p>
+										<a href="https://scholar.google.es/citations?user=yysYgmAAAAAJ&hl=es" class="special">More information</a>
+									</div>
+								</div>
+							</section>
+							
+					         <!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="images/ariza.jpg" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Pedro Ariza Bono (PhD)</h2>
+										<p align="justify">Software Engineer and Doctor in Biomedical Engineering, expert in the design of software solutions. Recently, he has developed a software for the analysis of functional brain networks that allows understanding of brain connectivity patterns to predict cognitive disorders. He has published research papers on biological network techniques in prestigious specialized magazines such as Scientific Reports or Frontiers in Human Neuroscience. Pedro is passionate about network technology and its infinite applications, especially in the world of medicine, to help understand the behavior of diseases and their early diagnosis, contributing to the improvement of people's health and quality of life. He is currently collaborating with the Laboratory of Biological Networks of the Center for Biomedical Technology in the development of software that allows the visualization of the dynamics of football passing networks.</p>
+										<a href="http://www.ctb.upm.es" class="special">More information</a>
+									</div>
+
+								</div>																	
+							</section>
+
+									
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Contact us</h2>
+							<p>We love to share ideas. Talk about complex systems. Of networks. But, especially soccer. Do not hesitate to contact us if you are interested about any of these issues.</p>
+
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									Complex Systems & Sports Analytics <br />
+									(Laboratorio de Redes Biol&oacute;gicas) <br />
+									Centro de Tecnolog&iacute;a Biom&eacute;dica (UPM)<br />
+									Campus de Montegancedo<br />
+									28223 Pozuelo de Alarc&oacute;n (Espa&ntilde;a)
+								</li>
+								<li class="icon solid fa-phone">(+34) 91 067 92 73</li>
+								<li class="icon solid fa-envelope"><a href="mailto:futbolyredes@gmail.com">futbolyredes@gmail.com</a></li> 
+								<li class="icon brands fa-twitter"><a href="https://twitter.com/FutbolyRedes">@FutbolyRedes</a></li>
+								<li class="icon brands fa-twitter"><a href="https://twitter.com/JmBuldu">@JmBuldu</a></li>
+								<li class="icon brands fa-twitter"><a href="https://twitter.com/antequera_dani">@antequera_dani</a></li>
+							</ul>
+							
+									<ul class="actions">
+										<li><a href="#" class="button">UP</a></li>
+									</ul>
+							
+							<ul class="copyright">
+								<li>&copy; Laboratory of Biological Networks - Center for Biomedical Technology - Pozuelo de Alarc&oacute;n - Madrid - Espa&ntilde;a</li><li>Design: <a href="http://html5up.net"> HTML5UP 2020</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

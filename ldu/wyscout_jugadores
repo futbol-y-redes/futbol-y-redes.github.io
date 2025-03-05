@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Players Scatterplot</title>
+    <style>
+        .radio-group {
+            max-height: 220px;
+            overflow-y: auto;
+            max-width: 200px;
+            font-size: 12px;
+            border: solid grey 0.5px;
+            border-radius: 15px;
+        }
+
+        .radio-group .radio-option {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            width: 100%;
+        }
+
+
+        .radio-group .radio-option input {
+            margin-right: 5px;
+        }
+
+        .radio-group .radio-option label {
+            word-wrap: break-word;
+            width: 95%;
+        }
+
+        #tooltip {
+            position: absolute;
+            padding: 2px;
+            pointer-events: none;
+            border-radius: 4px;
+            box-shadow: 3px 3px 10px 0px rgba(245, 222, 222);
+            font: 15px sans-serif;
+            color: firebrick;
+            line-height: 1;
+            padding: 12px;
+            background: rgb(248, 244, 244);
+            border-radius: 2px;
+        }
+
+        .player-info-box {
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            margin-bottom: 20px;
+        }
+
+        .player-info-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .player-info-box li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-dropdown {
+            border: 1px solid #ddd;
+            padding: 10px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+
+        .checkbox-dropdown label {
+            display: block;
+        }
+
+        #groupedChart {
+            height: 300px;
+        }
+
+        .table-container-outer {
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            /* Only vertical scrolling for outer container */
+            margin-left: 20px;
+        }
+
+        .table-container-inner {
+            overflow-x: auto;
+            /* Horizontal scrolling for inner container */
+            overflow-y: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            cursor: pointer;
+            position: sticky;
+            top: 0;
+            z-index: 3;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        td:first-child,
+        th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 2;
+            background-color: #e8e8e8;
+            box-shadow: 2px 0 0 0 black, -1px 0 0 0 black;
+        }
+
+        th:first-child {
+            z-index: 4;
+        }
+
+        legend {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="logo" style="height: 80px; margin-top: 10px;" />
+                <h1 style="margin-left: auto;">    LDU - Departamento de Sports Analytics - Comparativa de Jugadores (Wyscout)</h1>
+            </div>
+        </div>
+        <hr style='width:100%'>
+        <input type="file" id="csvFile">
+        </br>
+        </br>
+        <div class="row  original-div">
+            </br>
+            <div class="col-md-2" id="radio-container">
+                <fieldset id="x-axis-group" class="radio-group">
+                    <legend>Variable Horizontal (X)</legend>
+                </fieldset>
+                <div id="x-slider-container"></div>
+
+                <fieldset id="z-axis-group" class="radio-group">
+                    <legend>Tamaño (Z)</legend>
+                </fieldset>
+                <div id="z-slider-container"></div>
+            </div>
+            <div class="col-md-2" id="radio-container">
+                <fieldset id="y-axis-group" class="radio-group">
+                    <legend>Variable Vertical (Y)</legend>
+                </fieldset>
+                <div id="y-slider-container"></div>
+                </br>
+                <button id="rescaleButton">Reescala</button>
+                </br>
+                </br>
+                <button id="viewRawData">Todos los datos</button>
+
+
+            </div>
+            <div class="col-md-8">
+                <div id="chart"></div>
+            </div>
+        </div>
+        <div class="overlay-div" style="display: none;">
+            <button id="backButton" style="margin-left: 15px; margin-bottom: 15px;">Volver</button>
+            <div class="row">
+                <!-- Selected Player Info Box -->
+                <div class="col-md-2">
+                    <div class="player-info-box">
+                        <p style="text-align: left;font-size: 20px;font-weight: bolder;">Jugador Seleccionado</p>
+                        <ul>
+                            <li>Nombre: <span id="player-name"></span></li>
+                            <li>Equipo: <span id="player-team"></span></li>
+                            <li>Edad: <span id="player-age"></span></li>
+                            <li>Altura: <span id="player-height"></span></li>
+                            <li>Peso: <span id="player-weight"></span></li>
+                            <li>Nacionalidad: <span id="player-nat"></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Second Player Info Box -->
+                <div class="col-md-2">
+                    <div class="player-info-box">
+                        <p style="text-align: left;font-size: 20px;font-weight: bolder;">Jugador Comparado</p>
+                        <ul>
+                            <li>Nombre: <span id="second-player-name"></span></li>
+                            <li>Equipo: <span id="second-player-team"></span></li>
+                            <li>Edad: <span id="second-player-age"></span></li>
+                            <li>Altura: <span id="second-player-height"></span></li>
+                            <li>Peso: <span id="second-player-weight"></span></li>
+                            <li>Nacionalidad: <span id="second-player-nat"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Chart Container -->
+                <div class="col-md-8">
+                    <div id="groupedChart"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                   <!-- Player dropdown -->
+                   <label for="playerDropdown" style="font-size: 21px;font-weight: 70;">Compara Jugadores:</label>
+                   <select id="playerDropdown"></select>
+                </div>
+                <div class="col-md-2">
+                    <!-- Parameters dropdown (checkbox dropdown) -->
+                    <fieldset id="parametersDropdown" class="radio-group" style="margin-top:10px;">
+                        <legend style="font-size: 21px;font-weight: 70;">Selecciona Variables: </legend>
+                    </fieldset>
+                </div> 
+            </div>
+        </div>
+
+        <div class="row raw-data-div" style="display: none;margin-left:20px">
+            <button id="goBack">Volver</button>
+            </br>
+            </br>
+            <div class="table-container">
+                <table id="rawDataTable"></table>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="tooltip"></div>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://unpkg.com/d3-simple-slider"></script>
+    <script>
+        let fileInput = document.querySelector('input[type="file"]');
+        function isNumericOrBlank(str) {
+            return str === "" || !isNaN(str);
+        }
+
+        function isColumnNumericOrBlank(data, column) {
+            return data.every(function (row) {
+                return isNumericOrBlank(row[column]);
+            });
+        }
+
+        // Event listener for the 'Go Back' button
+        document.getElementById("backButton").addEventListener("click", function () {
+            // Hide overlay div
+            document.querySelector(".overlay-div").style.display = "none";
+
+            // Show original div
+            document.querySelector(".original-div").style.display = "block";
+        });
+        function wrap(text, width) {
+            text.each(function () {
+                var text = d3.select(this),
+                    words = text.text().split(/\s+/).reverse(),
+                    word,
+                    line = [],
+                    lineNumber = 0,
+                    lineHeight = 1.1, // ems
+                    y = text.attr("y"),
+                    dy = parseFloat(text.attr("dy")),
+                    tspan = text
+                        .text(null)
+                        .append("tspan")
+                        .attr("x", 0)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
+                while ((word = words.pop())) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text
+                            .append("tspan")
+                            .attr("x", 0)
+                            .attr("y", y)
+                            .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                            .text(word);
+                    }
+                }
+            });
+        }
+
+        function drawBarChart(data, selectedPlayerData, columns, secondPlayer) {
+            const animateDuration = 800;
+
+            d3.select("#groupedChart svg").remove();
+
+            const secondPlayerData = data.filter((d) => d.Jugador == secondPlayer)[0];
+            
+            // Populate the player info box
+            document.getElementById('second-player-name').textContent = secondPlayerData.Jugador;
+            document.getElementById('second-player-team').textContent = secondPlayerData.Equipo;
+            document.getElementById('second-player-age').textContent = secondPlayerData.Edad;
+            document.getElementById('second-player-height').textContent = secondPlayerData.Altura;
+            document.getElementById('second-player-weight').textContent = secondPlayerData.Peso;
+            document.getElementById('second-player-nat').textContent = secondPlayerData.Pasaporte; 
+
+            // Extract the values for each parameter from both players' data
+            let groupedData = columns.map((param) => ({
+                parameter: param,
+                firstPlayerValue: parseFloat(selectedPlayerData[param]),
+                secondPlayerValue: parseFloat(secondPlayerData[param]),
+            }));
+
+            var margin = { top: 70, right: 30, bottom: 100, left: 30 },
+                width = 800 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            let x0 = d3.scaleBand().domain(groupedData.map((d) => d.parameter)).rangeRound([0, width]).paddingInner(0.5);
+            let x1 = d3.scaleBand().domain(["firstPlayerValue", "secondPlayerValue"]).rangeRound([0, x0.bandwidth()]).padding(0.05);
+            let colors = d3.scaleOrdinal().range(["firebrick", "steelblue"]);
+
+            let yScales = {};
+            groupedData.forEach((d) => {
+                const maxValForThisParam = Math.max(d.firstPlayerValue, d.secondPlayerValue);
+                yScales[d.parameter] = d3.scaleLinear().domain([0, maxValForThisParam]).range([height, 0]).nice();
+            });
+
+            // Append SVG to the #groupedChart div
+            let svg = d3
+                .select("#groupedChart")
+                .append("svg")
+                .attr("preserveAspectRatio", "xMinYMin meet")
+                .attr(
+                    "viewBox",
+                    "0 0 " +
+                    (width + margin.left + margin.right) +
+                    " " +
+                    (height + margin.top + margin.bottom)
+                )
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // Create a D3 selection for the tooltip div
+            const tooltip = d3.select("#tooltip");
+
+            svg.append("g")
+                .selectAll("g")
+                .data(groupedData)
+                .enter()
+                .append("g")
+                .attr("transform", (d) => `translate(${x0(d.parameter)},0)`)
+                .selectAll("rect")
+                .data((d) => ["firstPlayerValue", "secondPlayerValue"].map((key) => ({ key: key, value: d[key] })))
+                .enter()
+                .append("rect")
+                .attr("x", (d) => x1(d.key))
+                .attr("y", (d, i, nodes) => {
+                    const param = d3.select(nodes[i].parentNode).datum().parameter;
+                    return yScales[param](d.value);
+                })
+                .attr("height", (d, i, nodes) => {
+                    const param = d3.select(nodes[i].parentNode).datum().parameter;
+                    return height - yScales[param](d.value);
+                })
+                .attr("width", x1.bandwidth())
+                .attr("rx", 3)
+                .attr("ry", 3)
+                .attr("fill", (d) => colors(d.key))
+                .attr("height", (d, i, nodes) => {
+                    const param = d3.select(nodes[i].parentNode).datum().parameter;
+                    return height - yScales[param](d.value);
+                }).on("mouseover", function (d) {
+                    d3.select("#tooltip").style("opacity", 1).html(d.value);
+                })
+                .on("mousemove", function (event) {
+                    d3.select("#tooltip")
+                        .style("left", d3.event.pageX + 25 + "px")
+                        .style("top", d3.event.pageY - 28 + "px");
+                })
+                .on("mouseout", function () {
+                    d3.select("#tooltip").style("opacity", 0);
+                })
+
+            columns.forEach((param, i) => {
+                svg.append("g")
+                    .attr("class", "axis")
+                    .attr("transform", `translate(${x0(param)}, 0)`)
+                    .call(d3.axisLeft(yScales[param]).ticks(5))
+                    .selectAll("path, line")
+                    .style("stroke", "grey");
+                svg.selectAll(".axis text")
+                    .style("fill", "grey");
+            });
+
+            svg
+                .append("g")
+                .attr("class", "axis")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x0))
+                .selectAll(".tick text")
+                .style("font-size", "12px")
+                .call(wrap, x0.bandwidth()); // Wrap the text using the bandwidth as the width
+
+
+            const legend = svg
+                .append("g")
+                .attr("transform", `translate(${margin.left + 50}, -55)`)
+                .selectAll("g")
+                .data(["firstPlayerValue", "secondPlayerValue"])
+                .enter()
+                .append("g")
+                .attr("transform", (d, i) => `translate(0, ${i * 20})`);  // Adjust the vertical spacing
+
+            legend
+                .append("rect")
+                .attr("width", 18)
+                .attr("height", 18)
+                .attr("fill", colors);
+
+            legend
+                .append("text")
+                .attr("x", 24)  // This will position the text to the right of the rect
+                .attr("y", 9)
+                .attr("dy", "0.35em")
+                .text((d) =>
+                    d === "firstPlayerValue" ? selectedPlayerData.Jugador : secondPlayer
+                );
+
+
+        }
+
+        d3.select("#goBack").on("click", function () {
+            d3.select(".raw-data-div").style("display", "none");
+            d3.select(".original-div").style("display", "block");
+        });
+
+        d3.select("#viewRawData").on("click", function () {
+            d3.select(".original-div").style("display", "none");
+            d3.select(".raw-data-div").style("display", "block");
+        });
+
+        fileInput.addEventListener('change', function (event) {
+            let file = event.target.files[0];
+
+            let reader = new FileReader();
+            reader.onload = function (event) {
+                let csvData = event.target.result;
+                let data = d3.csvParse(csvData);
+
+                createTable(data);
+
+                // Get the column names
+                var columns = Object.keys(data[0]).filter(function (column) {
+                    return isColumnNumericOrBlank(data, column);
+                });
+
+                var Allcolumns = Object.keys(data[0]);
+                var xSlider, ySlider, zSlider;
+                var selectedPlayerData, secondPlayerName;
+
+                let players = [...new Set(data.map((d) => d.Jugador))];
+                players.sort((a, b) => a.localeCompare(b));
+
+                // Populate the player dropdown using D3
+                let playerDropdown = d3.select("#playerDropdown");
+                playerDropdown
+                    .selectAll("option")
+                    .data(players)
+                    .enter()
+                    .append("option")
+                    .text((d) => d)
+                    .style('font-size', '15px')
+                    .attr("value", (d) => d);
+
+                playerDropdown.on("change", function () {
+                    secondPlayerName = this.value;
+                    drawBarChart(
+                        data,
+                        selectedPlayerData,
+                        selectedParameters,
+                        secondPlayerName
+                    );
+                });
+                secondPlayerName = playerDropdown.property("value");
+
+                let selectedParameters = columns.slice(0, 5);
+
+                function updateCheckbox() {
+                    let checkboxValue = this.value;
+                    if (this.checked) {
+                        if (selectedParameters.length < 10) {
+                            selectedParameters.push(checkboxValue);
+                        } else {
+                            this.checked = false;
+                            alert("You cannot select more than 10 parameters at a time.");
+                        }
+                    } else {
+                        let index = selectedParameters.indexOf(checkboxValue);
+                        if (index > -1) {
+                            selectedParameters.splice(index, 1);
+                        }
+                    }
+                    drawBarChart(
+                        data,
+                        selectedPlayerData,
+                        selectedParameters,
+                        secondPlayerName
+                    );
+                }
+
+                // Populate the checkbox dropdown using D3
+                let parametersDropdown = d3.select("#parametersDropdown");
+                parametersDropdown
+                    .selectAll("div.radio-option")
+                    .data(columns)
+                    .enter()
+                    .append("div")
+                    .attr("class", "radio-option")
+                    .each(function (d, i) {
+                        var div = d3.select(this);
+                        var checkbox = div
+                            .append("input")
+                            .attr("type", "checkbox")
+                            .attr("name", "p-column")
+                            .attr("id", function (d) {
+                                return "p-" + d;
+                            })
+                            .attr("value", d)
+                            .on("change", updateCheckbox);
+
+                        // Check the first 5 checkboxes by default
+                        if (i < 5) {
+                            checkbox.property("checked", true);
+                        }
+
+                        div
+                            .append("label")
+                            .attr("for", function (d) {
+                                return "p-" + d;
+                            })
+                            .text(d);
+                    });
+
+                // Create radio buttons for each column for X-axis
+                var xRadioGroup = d3.select("#x-axis-group");
+                xRadioGroup
+                    .selectAll("div")
+                    .data(columns)
+                    .enter()
+                    .append("div")
+                    .attr("class", "radio-option")
+                    .each(function (d, i) {
+                        var div = d3.select(this);
+                        div
+                            .append("input")
+                            .attr("type", "radio")
+                            .attr("name", "x-column")
+                            .attr("id", function (d) {
+                                return "x-" + d;
+                            })
+                            .attr("value", d)
+                            .property("checked", function () {
+                                return i === 0;
+                            })
+                            .on("change", update);
+                        div.append("label").text(d);
+                    });
+
+                // Create radio buttons for each column for Y-axis
+                var yRadioGroup = d3.select("#y-axis-group");
+                yRadioGroup
+                    .selectAll("div")
+                    .data(columns)
+                    .enter()
+                    .append("div")
+                    .attr("class", "radio-option")
+                    .each(function (d, i) {
+                        // include index 'i' in function parameters
+                        d3.select(this)
+                            .append("input")
+                            .attr("type", "radio")
+                            .attr("name", "y-column")
+                            .attr("id", function (d) {
+                                return "y-" + d;
+                            })
+                            .attr("value", d)
+                            .property("checked", function () {
+                                return i === 1;
+                            }) // check if index i is 1
+                            .on("change", update);
+                        d3.select(this).append("label").text(d);
+                    });
+
+                // Create radio buttons for each column for X-axis
+                var zRadioGroup = d3.select("#z-axis-group");
+                zRadioGroup
+                    .selectAll("div")
+                    .data(columns)
+                    .enter()
+                    .append("div")
+                    .attr("class", "radio-option")
+                    .each(function (d, i) {
+                        var div = d3.select(this);
+                        div
+                            .append("input")
+                            .attr("type", "radio")
+                            .attr("name", "z-column")
+                            .attr("id", function (d) {
+                                return "z-" + d;
+                            })
+                            .attr("value", d)
+                            .property("checked", function () {
+                                return i === 2;
+                            })
+                            .on("change", update);
+                        div.append("label").text(d);
+                    });
+
+                var xAttribute = d3.select('input[name="x-column"]:checked').node().value;
+                var yAttribute = d3.select('input[name="y-column"]:checked').node().value;
+                var zAttribute = d3.select('input[name="z-column"]:checked').node().value;
+
+                //**************Scatterplot section****************//
+
+                // set the dimensions and margins of the graph
+                var margin = { top: 20, right: 120, bottom: 50, left: 90 },
+                    width = 960 - margin.left - margin.right,
+                    height = 600 - margin.top - margin.bottom;
+                // set the ranges
+                var x = d3.scaleLinear().range([0, width]).nice();
+                var y = d3.scaleLinear().range([height, 0]).nice();
+                var z = d3.scaleLinear().range([2, 15]).nice();
+
+                var svg = d3
+                    .select("#chart")
+                    .append("svg")
+                    .attr("preserveAspectRatio", "xMinYMin meet")
+                    .attr(
+                        "viewBox",
+                        "0 0 " +
+                        (width + margin.left + margin.right) +
+                        " " +
+                        (height + margin.top + margin.bottom)
+                    )
+                    .append("g")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                // Scale the range of the data
+                x.domain(
+                    d3.extent(data, function (d) {
+                        return +d[xAttribute];
+                    })
+                );
+                y.domain(
+                    d3.extent(data, function (d) {
+                        return +d[xAttribute];
+                    })
+                );
+                z.domain(
+                    d3.extent(data, function (d) {
+                        return +d[zAttribute];
+                    })
+                );
+
+                // Add the scatterplot
+                svg
+                    .selectAll("dot")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("r", function (d) {
+                        return z(+d[zAttribute]);
+                    })
+                    .attr("fill", "firebrick")
+                    .attr("fill-opacity", 0.75)
+                    .attr("stroke", "firebrick")
+                    .attr("cx", function (d) {
+                        return x(+d[xAttribute]);
+                    })
+                    .attr("cy", function (d) {
+                        return y(+d[yAttribute]);
+                    })
+                    .on("click", function (d) {
+                        selectedPlayerData = d;
+
+                        // Populate the player info
+                        document.getElementById("player-name").textContent = d.Jugador;
+                        document.getElementById("player-team").textContent = d.Equipo;
+                        document.getElementById("player-age").textContent = d.Edad;
+                        document.getElementById("player-height").textContent = d.Altura;
+                        document.getElementById("player-weight").textContent = d.Peso;
+                        document.getElementById("player-nat").textContent = d.Pasaporte;
+                        // Hide original div
+                        document.querySelector(".original-div").style.display = "none";
+
+                        // Show overlay div
+                        document.querySelector(".overlay-div").style.display = "block";
+
+                        drawBarChart(
+                            data,
+                            selectedPlayerData,
+                            selectedParameters,
+                            secondPlayerName
+                        );
+                    });
+
+                // Add the X Axis
+                svg
+                    .append("g")
+                    .attr("class", "x-axis")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x));
+
+                // Add the Y Axis
+                svg.append("g").attr("class", "y-axis").call(d3.axisLeft(y));
+
+                // Add X axis label
+                svg
+                    .append("text")
+                    .attr("class", "x-label")
+                    .attr("text-anchor", "middle")
+                    .attr("x", width / 2)
+                    .attr("y", height + margin.bottom - 5)
+                    .style("font-size", "20px")
+                    .text(xAttribute);
+
+                // Add Y axis label
+                svg
+                    .append("text")
+                    .attr("class", "y-label")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 0 - margin.left)
+                    .attr("x", 0 - height / 2)
+                    .attr("dy", "1em")
+                    .style("text-anchor", "middle")
+                    .style("font-size", "20px")
+                    .text(yAttribute);
+
+                d3.select("#rescaleButton").on("click", function () {
+                    var xAttribute = d3.select('input[name="x-column"]:checked').node().value;
+                    var yAttribute = d3.select('input[name="y-column"]:checked').node().value;
+                    var zAttribute = d3.select('input[name="z-column"]:checked').node().value;
+
+                    var xVal = xSlider.value();
+                    var yVal = ySlider.value();
+                    var zVal = zSlider.value();
+
+                    // Filter data based on current slider values
+                    var filteredData = data.filter(function (d) {
+                        return (
+                            +d[xAttribute] >= xVal[0] &&
+                            +d[xAttribute] <= xVal[1] &&
+                            +d[yAttribute] >= yVal[0] &&
+                            +d[yAttribute] <= yVal[1] &&
+                            +d[zAttribute] >= zVal[0] &&
+                            +d[zAttribute] <= zVal[1]
+                        );
+                    });
+
+                    // Get the min and max for the x, y, and z attributes of the filtered data
+                    var xMinMax = d3.extent(filteredData, function (d) {
+                        return +d[xAttribute];
+                    });
+                    var yMinMax = d3.extent(filteredData, function (d) {
+                        return +d[yAttribute];
+                    });
+                    var zMinMax = d3.extent(filteredData, function (d) {
+                        return +d[zAttribute];
+                    });
+
+                    // Update the x, y, and z scales
+                    x.domain(xMinMax);
+                    y.domain(yMinMax);
+                    z.domain(zMinMax);
+
+                    // Transition the axes
+                    svg.select(".x-axis").transition().duration(2000).call(d3.axisBottom(x));
+
+                    svg.select(".y-axis").transition().duration(2000).call(d3.axisLeft(y));
+
+                    // Select all circles and transition to new positions
+                    svg
+                        .selectAll("circle")
+                        .transition()
+                        .duration(2000)
+                        .attr("cx", function (d) {
+                            return x(+d[xAttribute]);
+                        })
+                        .attr("cy", function (d) {
+                            return y(+d[yAttribute]);
+                        })
+                        .attr("opacity", function (d) {
+                            return +d[xAttribute] >= xVal[0] &&
+                                +d[xAttribute] <= xVal[1] &&
+                                +d[zAttribute] >= zVal[0] &&
+                                +d[zAttribute] <= zVal[1] &&
+                                +d[yAttribute] >= yVal[0] &&
+                                +d[yAttribute] <= yVal[1]
+                                ? 1.0
+                                : 0.0;
+                        });
+                });
+
+                // Add a function to update the chart
+                function update() {
+                    var xAttribute = d3.select('input[name="x-column"]:checked').node().value;
+                    var yAttribute = d3.select('input[name="y-column"]:checked').node().value;
+                    var zAttribute = d3.select('input[name="z-column"]:checked').node().value;
+
+                    // Rescale the domains
+                    x.domain(
+                        d3.extent(data, function (d) {
+                            return +d[xAttribute];
+                        })
+                    );
+                    y.domain(
+                        d3.extent(data, function (d) {
+                            return +d[yAttribute];
+                        })
+                    );
+                    z.domain(
+                        d3.extent(data, function (d) {
+                            return +d[zAttribute];
+                        })
+                    );
+
+                    // Select all circles and transition to new positions
+                    svg
+                        .selectAll("circle")
+                        .on("mousemove", function (d) {
+                            d3.select(this)
+                                .style("fill", "#69b3a2")
+                                .attr("stroke", "black")
+                                .attr("stroke-width", "2px");
+
+                            d3.select("#tooltip")
+                                .html(
+                                    "<b>" +
+                                    Allcolumns[0] +
+                                    ": </b>" +
+                                    d[Allcolumns[0]] +
+                                    "</br><b>" +
+                                    Allcolumns[29] +
+                                    ": </b>" +
+                                    d[Allcolumns[29]] +
+                                    "</br><b>" +
+                                    xAttribute +
+                                    ": </b>" +
+                                    d[xAttribute] +
+                                    "</br><b>" +
+                                    yAttribute +
+                                    ": </b>" +
+                                    d[yAttribute] +
+                                    "</br><b>" +
+                                    zAttribute +
+                                    ": </b>" +
+                                    d[zAttribute]
+                                )
+                                .style("left", d3.event.pageX + 25 + "px")
+                                .style("top", d3.event.pageY - 28 + "px")
+                                .style("opacity", 1);
+                        })
+                        .on("mouseleave", function () {
+                            d3.select(this).style("fill", "firebrick").attr("stroke", "firebrick");
+                            d3.select("#tooltip")
+                                .style("opacity", 0)
+                                .style("left", -500 + "px")
+                                .style("top", -500 + "px");
+                        })
+                        .transition()
+                        .duration(2000)
+                        .attr("cx", function (d) {
+                            return x(+d[xAttribute]);
+                        })
+                        .attr("cy", function (d) {
+                            return y(+d[yAttribute]);
+                        })
+                        .attr("r", function (d) {
+                            return z(+d[zAttribute]);
+                        })
+                        .attr("opacity", 1);
+
+                    // Transition the axes
+                    svg.select(".x-axis").transition().duration(2000).call(d3.axisBottom(x));
+
+                    svg.select(".y-axis").transition().duration(2000).call(d3.axisLeft(y));
+
+                    // Update the axis labels
+                    svg.select(".x-label").text(xAttribute);
+                    svg.select(".y-label").text(yAttribute);
+
+                    //remove previous sliders on update
+                    d3.select("div#x-slider-container svg").remove();
+                    d3.select("div#y-slider-container svg").remove();
+                    d3.select("div#z-slider-container svg").remove();
+
+                    // Get the min and max for the selected x and y attributes
+                    var xMinMax = d3.extent(data, function (d) {
+                        return +d[xAttribute];
+                    });
+                    var yMinMax = d3.extent(data, function (d) {
+                        return +d[yAttribute];
+                    });
+                    var zMinMax = d3.extent(data, function (d) {
+                        return +d[zAttribute];
+                    });
+
+                    // Create the x slider
+                    xSlider = d3
+                        .sliderBottom()
+                        .min(xMinMax[0])
+                        .max(xMinMax[1])
+                        .width(170)
+                        .ticks(2)
+                        .default([xMinMax[0], xMinMax[1]])
+                        .fill("firebrick")
+                        .on("onchange", (val) => {
+                            var yVal = ySlider.value();
+                            var zVal = zSlider.value();
+                            svg.selectAll("circle").attr("opacity", function (d) {
+                                return +d[xAttribute] >= val[0] &&
+                                    +d[xAttribute] <= val[1] &&
+                                    +d[zAttribute] >= zVal[0] &&
+                                    +d[zAttribute] <= zVal[1] &&
+                                    +d[yAttribute] >= yVal[0] &&
+                                    +d[yAttribute] <= yVal[1]
+                                    ? 1.0
+                                    : 0.0;
+                            });
+                        });
+
+                    var xSliderGroup = d3
+                        .select("div#x-slider-container")
+                        .append("svg")
+                        .attr("width", 200)
+                        .attr("height", 50)
+                        .append("g")
+                        .attr("transform", "translate(15,10)");
+
+                    xSliderGroup.call(xSlider);
+
+                    // Create the y slider
+                    ySlider = d3
+                        .sliderBottom()
+                        .min(yMinMax[0])
+                        .max(yMinMax[1])
+                        .width(170)
+                        .ticks(2)
+                        .default([yMinMax[0], yMinMax[1]])
+                        .fill("firebrick")
+                        .on("onchange", (val) => {
+                            var xVal = xSlider.value();
+                            var zVal = zSlider.value();
+                            svg.selectAll("circle").attr("opacity", function (d) {
+                                return +d[xAttribute] >= xVal[0] &&
+                                    +d[xAttribute] <= xVal[1] &&
+                                    +d[zAttribute] >= zVal[0] &&
+                                    +d[zAttribute] <= zVal[1] &&
+                                    +d[yAttribute] >= val[0] &&
+                                    +d[yAttribute] <= val[1]
+                                    ? 1.0
+                                    : 0.0;
+                            });
+                        });
+
+                    var ySliderGroup = d3
+                        .select("div#y-slider-container")
+                        .append("svg")
+                        .attr("width", 200)
+                        .attr("height", 50)
+                        .append("g")
+                        .attr("transform", "translate(15,10)");
+
+                    ySliderGroup.call(ySlider);
+
+                    // Create the x slider
+                    zSlider = d3
+                        .sliderBottom()
+                        .min(zMinMax[0])
+                        .max(zMinMax[1])
+                        .width(170)
+                        .ticks(2)
+                        .default([zMinMax[0], zMinMax[1]])
+                        .fill("firebrick")
+                        .on("onchange", (val) => {
+                            var xVal = xSlider.value();
+                            var yVal = ySlider.value();
+                            svg.selectAll("circle").attr("opacity", function (d) {
+                                return +d[xAttribute] >= xVal[0] &&
+                                    +d[xAttribute] <= xVal[1] &&
+                                    +d[zAttribute] >= val[0] &&
+                                    +d[zAttribute] <= val[1] &&
+                                    +d[yAttribute] >= yVal[0] &&
+                                    +d[yAttribute] <= yVal[1]
+                                    ? 1.0
+                                    : 0.0;
+                            });
+                        });
+
+                    var zSliderGroup = d3
+                        .select("div#z-slider-container")
+                        .append("svg")
+                        .attr("width", 200)
+                        .attr("height", 50)
+                        .append("g")
+                        .attr("transform", "translate(15,10)");
+
+                    zSliderGroup.call(zSlider);
+                }
+                update();
+            }
+            reader.readAsText(file);
+        });
+
+
+        function createTable(data) {
+            const table = d3.select("#rawDataTable");
+            const thead = table.append("thead");
+            const tbody = table.append("tbody");
+
+            // columns
+            const columns = Object.keys(data[0]);
+
+            // header
+            thead
+                .append("tr")
+                .selectAll("th")
+                .data(columns)
+                .enter()
+                .append("th")
+                .text((d) => d)
+                .on("click", function (column) {
+                    sortTableByColumn(table, column);
+                });
+
+            // rows
+            tbody
+                .selectAll("tr")
+                .data(data)
+                .enter()
+                .append("tr")
+                .selectAll("td")
+                .data((row) => columns.map((column) => row[column]))
+                .enter()
+                .append("td")
+                .text((d) => d);
+            let sortAscending = true;
+
+            function sortTableByColumn(table, column) {
+                const tbody = table.select("tbody");
+                const rows = tbody.selectAll("tr").data();
+                const sortedData = rows.sort((a, b) => {
+                    if (sortAscending) {
+                        return d3.ascending(a[column], b[column]);
+                    } else {
+                        return d3.descending(a[column], b[column]);
+                    }
+                });
+
+                sortAscending = !sortAscending;
+
+                // Rebind the sorted data to the rows
+                const rowsUpdated = tbody.selectAll("tr").data(sortedData);
+
+                // Update the cells
+                rowsUpdated
+                    .selectAll("td")
+                    .data((row) => columns.map((column) => row[column]))
+                    .text((d) => d);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
