@@ -7,17 +7,12 @@
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+
 # Site settings
 # These are used to personalize your new site. If you look in the HTML files,
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
 title: Fútbol y Redes
 email: futbolyredes@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
@@ -31,7 +26,6 @@ github_username:  futbol-y-redes
 locale: es-ES
 repository: "futbol-y-redes/futbol-y-redes.github.io"
 logo: "/assets/images/logo.png"
-breadcrumbs: true
 search: true
 lunr:
   search_within_pages: true
@@ -66,37 +60,17 @@ footer:
       url: "https://github.com/Futbol-y-Redes"
 
 include: ["_pages"]
+
 # Build settings
-#theme: minimal-mistakes-jekyll
-plugins:
-  - jekyll-feed
-  - jekyll-include-cache
-  - jemoji
-  - jekyll-font-awesome-sass
-
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-remote_theme: "mmistakes/minimal-mistakes@4.26.2"  
+markdown: kramdown
+theme: minimal-mistakes-jekyll
 # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 minimal_mistakes_skin: "mint" 
+
+plugins:
+  - jekyll-feed
+  - jemoji
+  - jekyll-font-awesome-sass
 
 defaults:
   # _posts
@@ -117,3 +91,15 @@ defaults:
       layout: single
       author_profile: true
 
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

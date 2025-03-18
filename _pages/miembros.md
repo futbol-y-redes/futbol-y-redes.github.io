@@ -40,7 +40,7 @@ Xiong es un estudiante predoctoral de Beijing, China.<br /><br /><br />
 * ### Julieta Schwartz // Ayudante de investigación
 
 ![image-right](/assets/images/julieta.png){: .align-right}
-¡Julieta ha hecho un montón de cosas!<br /><br /><br /><br /><br /><br /><br /><br />
+Graduada en Física por la Universidad de Zaragoza realizando un año de estancia en la Bath University (Inglaterra) donde surgió su pasión por el análisis de datos deportivo. Actualmente está cursando un máster en Big Data, Data Science e Inteligencia Artificial en la Universidad Complutense de Madrid. Es una apasionada del fútbol, la física y el deporte, con varias medias maratones. Actualmente es ayudante de investigación en el grupo de Sistemas Complejos de la Universidad Rey Juan Carlos, donde analiza datos complejos y proporciona soporte utilizando herramientas avanzadas de programación y análisis.<br /><br /><br /><br /><br /><br /><br /><br />
 {: .notice--primary .text-justify}
 
 * ### Javier Ortiz de Artiñano // Gestor de proyectos
