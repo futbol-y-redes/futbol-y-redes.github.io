@@ -25,14 +25,14 @@ twitter_username: FutbolyRedes
 github_username:  futbol-y-redes
 locale: es-ES
 repository: "futbol-y-redes/futbol-y-redes.github.io"
-logo: "/assets/images/logo.png"
+logo: "/assets/images/logo.jpeg"
 search: true
 lunr:
   search_within_pages: true
 
 author:
   name: "Fútbol y Redes"
-  avatar: "/assets/images/logo.png"
+  avatar: "/assets/images/logo.jpeg"
   bio: ""
   location: "Madrid, España"
   url: "https://maps.app.goo.gl/XDtivTs9vr8ft5Lp9"
