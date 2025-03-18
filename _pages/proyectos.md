@@ -51,7 +51,7 @@ feature_row_2:
     alt: "Redes de Campo & F.C. Barcelona"
     title: "Redes de Campo & F.C. Barcelona"
     excerpt: "Las redes de pases no tienen que ser necesariamente entre jugadores. También se pueden construir redes de campo, donde es posible estudiar las propiedades espaciales de los pases (dónde se pasa más, de dónde a dónde, ...). Este tipo de redes permite descirbir el juego de un equipo yendo más allá de los jugadores. Un ejemplo práctico, es este estudio sobre el juego del Barça de Guardiola."
-    url: "http://s512731021.mialojamiento.es/jmbuldu/files/20_diestra_csf.pdf"
+    url: "https://www.sciencedirect.com/science/article/pii/S0960077920303337"
     btn_label: "Leer más"
     btn_class: "btn--primary"
 

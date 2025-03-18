@@ -22,7 +22,9 @@ Coordinador del Laboratorio de Redes Biológicas del Centro de Tecnología Biom�
 * ### Johann Martínez // Profesor Ayudante Doctor
 
 ![image-left](/assets/images/martinez.png){: .align-left}
-Físico y M.Sc en Ciencias Biomédicas por la Universidad de los Andes. Colombia. M.Sc. Física y Ph.D Física de Sistemas Complejos por la Universidad Politécnica de Madrid. España. Postdoctorado INSERM-Sorbonné Université, ICM París. Francia, Research Fellow Ministerio de Ciencias, Gobierno de Colombia, y miembro activo del Grupo Interdisciplinar de Sistemas Complejos (GISC) Madrid. España. Desde la Física de los Sistemas Complejos, trabaja activamente en Ciencia de Redes, series de tiempo, dinámica no lineal y proyectos relacionados con la ciencia de datos en sistemas reales y artificiales (Neurociencia, Sociología, Biología, entre otros). Tiene amplia experiencia en investigación transdisciplinaria en aras de soluciones novedosas a problemas que involucren pluralidad. Trabaja en equipos interdisciplinarios internacionales que implican ciencias de la computación, matemáticas, física y aplicaciones a problemas biológicos y/o sociales. Forma parte del comité fundador de la Conferencia Latinoamericana sobre Redes Complejas (LANET) y Organizador del Brain Networks Satellite @NetSci.<br />
+Sus principales intereses se centran en la física de sistemas complejos, en la que explora fenómenos de la ciencia de redes, la teoría de la información y la dinámica no lineal, junto con proyectos de ciencia de datos en el contexto de la neurociencia, las ciencias sociales y la biología, entre otros.<br />
+Siempre le han impresionado los trabajos de investigación que muestran cómo los sistemas naturales y artificiales exhiben comportamientos típicamente atribuidos a los sistemas físicos; de ahí que apueste por la investigación transdisciplinar para resolver problemas, en un campo determinado, recurriendo a herramientas de otro campo a primera vista completamente distinto. Una forma innovadora de encontrar nuevas soluciones con una perspectiva diferente trabajando en equipos interdisciplinares que hagan hincapié en las matemáticas aplicadas, la física estadística y la informática, con aplicaciones a problemas médicos, biológicos o sociales relevantes.<br />
+Es miembro del Consejo Editorial del Journal of Complex Networks (Oxford Academics), editor invitado de Chaos Solitons & Fractals (Elsevier), & Chaos Journal (AIP). Forma parte del comité directivo de la Conferencia Latinoamericana sobre Redes Complejas (LANET), & ENREDANDO, Escuela internacional de dinámica no lineal y redes, Organizador de los Satélites de Redes Cerebrales @NetSci.<br />
 [<span style="color: black"> **> Más información** </span>](https://johemart.wixsite.com/neurocomplexity){: .btn .btn--inverse .align-right}<br />
 {: .notice--primary .text-justify}
 
@@ -74,13 +76,11 @@ Doctor en Física fundamental egresado de la Universidad de Los Andes, Mérida -
 * ### Javier Galiano
 
 Todos los colaboradores externos del grupo son personas estupendas y nos morimos de ganas por aprender más de él. <br /><br /><br /><br /><br /><br /><br />
-[<span style="color: black"> **> Más información** </span>](https://www.esade.edu/profesorado/xavier.busquets){: .btn .btn--inverse .align-right}<br />
 {: .notice--primary .text-justify}
 
 * ### Miguel Ángel Ruán
 
 Todos los colaboradores externos del grupo son personas estupendas y nos morimos de ganas por aprender más de él. <br /><br /><br /><br /><br /><br /><br />
-[<span style="color: black"> **> Publicaciones** </span>](https://www.researchgate.net/profile/Miguel-Ruano-4){: .btn .btn--inverse .align-left}<br />
 {: .notice--primary .text-justify}
 
 # Miembros antiguos
