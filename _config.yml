@@ -63,11 +63,13 @@ include: ["_pages"]
 
 # Build settings
 markdown: kramdown
-theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes@4.26.2
+#theme: minimal-mistakes-jekyll
 # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 minimal_mistakes_skin: "mint" 
 
 plugins:
+  - jekyll-include-cache
   - jekyll-feed
   - jemoji
   - jekyll-font-awesome-sass
