@@ -29,7 +29,7 @@ Físico y M.Sc en Ciencias Biomédicas por la Universidad de los Andes. Colombia
 * ### Paula Rodríguez // Estudiante predoctoral
 
 ![image-right](/assets/images/paula.png){: .align-right}
-Paula Rodríguez es ingeniera de telecomunicaciones por la Universidad Politécnica de Madrid y cuenta con un máster en Física de la Materia Condensada y de los Sistemas Biológicos por la Universidad Autónoma de Madrid. Actualmente, es estudiante de doctorado en el grupo de Sistemas Complejos de la Universidad Rey Juan Carlos. Su investigación explora la relación entre el espacio, el tiempo y la evolución de sistemas complejos en entornos sociales, naturales y tecnológicos, utilizando herramientas de la ciencia de redes, dinámica no lineal, física estadística y aprendizaje automático.<br /><br /><br />
+Paula Rodríguez es ingeniera de telecomunicaciones por la Universidad Politécnica de Madrid y cuenta con un máster en Física de la Materia Condensada y de los Sistemas Biológicos por la Universidad Autónoma de Madrid. Actualmente, es estudiante de doctorado en el grupo de Sistemas Complejos de la Universidad Rey Juan Carlos. Su investigación explora la relación entre el espacio, el tiempo y la evolución de sistemas complejos en entornos sociales, naturales y tecnológicos, utilizando herramientas de la ciencia de redes, dinámica no lineal, física estadística y aprendizaje automático.<br /><br /><br /><br />
 {: .notice--primary .text-justify}
 
 * ### Xiong // Estudiante predoctoral
@@ -40,13 +40,13 @@ Xiong es un estudiante predoctoral de Beijing, China.<br /><br /><br />
 * ### Julieta Schwartz // Ayudante de investigación
 
 ![image-right](/assets/images/julieta.png){: .align-right}
-Graduada en Física por la Universidad de Zaragoza realizando un año de estancia en la Bath University (Inglaterra) donde surgió su pasión por el análisis de datos deportivo. Actualmente está cursando un máster en Big Data, Data Science e Inteligencia Artificial en la Universidad Complutense de Madrid. Es una apasionada del fútbol, la física y el deporte, con varias medias maratones. Actualmente es ayudante de investigación en el grupo de Sistemas Complejos de la Universidad Rey Juan Carlos, donde analiza datos complejos y proporciona soporte utilizando herramientas avanzadas de programación y análisis.<br /><br /><br /><br /><br /><br /><br /><br />
+Graduada en Física por la Universidad de Zaragoza realizando un año de estancia en la Bath University (Inglaterra) donde surgió su pasión por el análisis de datos deportivo. Actualmente está cursando un máster en Big Data, Data Science e Inteligencia Artificial en la Universidad Complutense de Madrid. Es una apasionada del fútbol, la física y el deporte, con varias medias maratones. Actualmente es ayudante de investigación en el grupo de Sistemas Complejos de la Universidad Rey Juan Carlos, donde analiza datos complejos y proporciona soporte utilizando herramientas avanzadas de programación y análisis.<br /><br /><br /><br /><br /><br /><br />
 {: .notice--primary .text-justify}
 
 * ### Javier Ortiz de Artiñano // Gestor de proyectos
 
 ![image-left](/assets/images/ortiz.png){: .align-left}
-Javier es biotecnólogo por la Universidad Politécnica de Madrid y también cuenta con un Máster en Data Science por la misma universidad. Como gestor de proyectos del grupo, se encarga de las tareas relativas a la gestión y organización –como, por ejemplo, ¡el diseño de esta página!–; no obstante, posee un gran interés por los sistemas complejos de todo tipo, incluyendo la neurociencia y las redes biológicas. Entre sus otros intereses se cuenta la lectura (particularmente la historia y la filosofía), la naturaleza, el escultismo y, de vez en cuando, tocar (como pueda) la guitarra.<br /><br /><br /><br />
+Javier es biotecnólogo por la Universidad Politécnica de Madrid y también cuenta con un Máster en Data Science por la misma universidad. Como gestor de proyectos del grupo, se encarga de las tareas relativas a la gestión y organización –como, por ejemplo, ¡el diseño de esta página!–; no obstante, posee un gran interés por los sistemas complejos de todo tipo, incluyendo la neurociencia y las redes biológicas. Entre sus otros intereses se cuenta la lectura (particularmente la historia y la filosofía), la naturaleza, el escultismo y, de vez en cuando, tocar (como pueda) la guitarra.<br /><br /><br /><br /><br />
 {: .notice--primary .text-justify}
 
 # Colaboradores externos
@@ -68,7 +68,7 @@ Javier Busquets está especializado en estrategia digital, gobierno de la innova
 * ### José Luis Herrera Diestra
 
 ![image-right](/assets/images/diestra.png){: .align-right}
-Doctor en Física fundamental egresado de la Universidad de Los Andes, Mérida - Venezuela. Realizó estancias postdoctorales en la University of Texas at Austin, Texas - Estados Unidos (2012 - 2013 y 2016 - 2017) y en el ICTP - SAIFR, Sao Paulo - Brasil (2017 - 2019). Actualmente trabaja en la University of Texas at Austin como Investigador Asociado. Su campo principal de investigación es la caracterización y estudio de las redes complejas en diversos contextos. En este sentido, colabora con diversos grupos a nivel nacional e internacional realizando investigación sobre el efecto de las redes de contacto en la propagación de enfermedades infecciosas en seres humanos y animales; así como la aplicación de las redes complejas para evaluar el desempeño individual y grupal en deportes, particularmente fútbol.<br /><br />
+Doctor en Física fundamental egresado de la Universidad de Los Andes, Mérida - Venezuela. Realizó estancias postdoctorales en la University of Texas at Austin, Texas - Estados Unidos (2012 - 2013 y 2016 - 2017) y en el ICTP - SAIFR, Sao Paulo - Brasil (2017 - 2019). Actualmente trabaja en la University of Texas at Austin como Investigador Asociado. Su campo principal de investigación es la caracterización y estudio de las redes complejas en diversos contextos. En este sentido, colabora con diversos grupos a nivel nacional e internacional realizando investigación sobre el efecto de las redes de contacto en la propagación de enfermedades infecciosas en seres humanos y animales; así como la aplicación de las redes complejas para evaluar el desempeño individual y grupal en deportes, particularmente fútbol.<br /><br /><br />
 {: .notice--primary .text-justify}
 
 * ### Javier Galiano
