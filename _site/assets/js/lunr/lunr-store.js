@@ -8,6 +8,9 @@ var store = [{
     "title": "About",
     "excerpt":"This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com You can find the source code for Minima at GitHub: jekyll / minima You can find the source code for Jekyll at GitHub: jekyll...","url": "http://localhost:4000/about/"
   },{
+    "title": "About",
+    "excerpt":"This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com You can find the source code for Minima at GitHub: jekyll / minima You can find the source code for Jekyll at GitHub: jekyll...","url": "http://localhost:4000/about/"
+  },{
     "title": "Contacto",
     "excerpt":"Nos encanta compartir ideas. Hablar de sistemas complejos. De redes. Pero, sobre todo, de fútbol. No dudes en contactar con nosotros si tienes inquietudes sobre todos estos temas. Complex Systems &amp; Sports Analytics       Laboratorio de Redes Biológicas       Centro de Tecnología Biomédica (UPM)       Campus de Montegancedo       28223 Pozuelo de Alarcón (España)...","url": "http://localhost:4000/contacto/"
   },{
