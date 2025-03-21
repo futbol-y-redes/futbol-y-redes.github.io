@@ -14,7 +14,7 @@ header:
   actions:
     - label: "Conócenos"
       url: "/quienes-somos/"
-excerpt: "Laboratorio de Redes Biológicas (URJC-CTB) – Centro de Tecnología Biomédica – Pozuelo de Alarcón, Madrid, España"
+excerpt: "Universidad Rey Juan Carlos (URJC) <br /> Campus de Fuenlabrada / Campus de Móstoles <br /> Comunidad de Madrid, España<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> "
 
 ---
 

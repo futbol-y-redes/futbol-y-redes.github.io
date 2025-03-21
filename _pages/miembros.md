@@ -1,6 +1,7 @@
 ---
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+# http://www.complexity.es/jmbuldu/publications
 
 layout: splash
 author_profile: true
@@ -16,7 +17,7 @@ permalink: /miembros/
 
 ![javier](/assets/images/buldu.png){: .align-right}
 Coordinador del Laboratorio de Redes Biológicas del Centro de Tecnología Biomédica, Javier M. Buldú es Ingeniero y Doctor en Física Aplicada por la Universidad Politécnica de Cataluña. Es experto en dinámica no-lineal y sistemas complejos, pero especialmente en la aplicación de la Ciencia de las Redes a sistemas biológicos, tecnológicos y sociales. Ha publicado más de 100 artículos científicos en revistas internacionales con revisión por pares, organizado Conferencias y Escuelas internacionales y colaborado con varias empresas en el análisis inteligente de datos. Javier ha realizado estancias post-doctorales en el Centro de Astrobiología y ha sido investigador visitante de la University of Oxford. También ha realizado actividades de transferencia de la investigación, colaborando con varias empresas en la aplicación de la Ciencia de las Redes al sector privado. Durante los últimos años se ha especializado en ciencia de los datos aplicada al fútbol, desarrollando nuevas métricas a partir de metodologías de los sistemas complejos.<br />
-[<span style="color: black"> **> Publicaciones** </span>](http://www.complexity.es/jmbuldu/publications){: .btn .btn--inverse .align-left}<br />
+[<span style="color: black"> **> Publicaciones** </span>](https://scholar.google.com/citations?user=pFIlwGUAAAAJ&hl=es&oi=ao){: .btn .btn--inverse .align-left}<br />
 {: .notice--primary .text-justify}
 
 * ### Johann Martínez // Profesor Ayudante Doctor
@@ -70,23 +71,12 @@ Ignacio Echegoyen es Psicólogo y Doctor en Ingeniería Biomédica por la Univer
 [<span style="color: black"> **> Más información** </span>](https://nachoenblanco.github.io/){: .btn .btn--inverse .align-left}<br />
 {: .notice--primary .text-justify}
 
-* ### Xavier Busquets
-
-![busquets](/assets/images/busquets.png){: .align-left}
-Javier Busquets está especializado en estrategia digital, gobierno de la innovación y transformación digital en la empresa. Es el director del programa Executive Master in Digital Business (en colaboración con la SCU en Silicon Valley) y Liderazgo Digital (en asociación con IDC España). Es profesor de los programas Bachelor in Global Governance, Doble Grado en Dirección de Empresas y Derecho, MBA, Executive MBA y programas a medida para empresas. Su interés investigador se centra en el rol directivo y la innovación (en particular, el papel del chief information officer, CIO), la teoría de redes y los sistemas complejos. Se ha especializado en los sectores de la banca, los seguros y el fintech, la salud y los medios de comunicación. Previamente, había desarrollado actividades ejecutivas y de consultoría en Telefónica, Retevisión, Hewlett Packard y Siebel Systems. Posee una amplia experiencia en formación ejecutiva y en actividades de consultoría.<br />
-[<span style="color: black"> **> Más información** </span>](https://www.esade.edu/profesorado/xavier.busquets){: .btn .btn--inverse .align-right}<br />
-{: .notice--primary .text-justify}
-
 * ### José Luis Herrera Diestra
 
-![diestra](/assets/images/diestra.png){: .align-right}
+![diestra](/assets/images/diestra.png){: .align-left}
 Doctor en Física fundamental egresado de la Universidad de Los Andes, Mérida - Venezuela. Realizó estancias postdoctorales en la University of Texas at Austin, Texas - Estados Unidos (2012 - 2013 y 2016 - 2017) y en el ICTP - SAIFR, Sao Paulo - Brasil (2017 - 2019). Actualmente trabaja en la University of Texas at Austin como Investigador Asociado. Su campo principal de investigación es la caracterización y estudio de las redes complejas en diversos contextos. En este sentido, colabora con diversos grupos a nivel nacional e internacional realizando investigación sobre el efecto de las redes de contacto en la propagación de enfermedades infecciosas en seres humanos y animales; así como la aplicación de las redes complejas para evaluar el desempeño individual y grupal en deportes, particularmente fútbol.<br /><br /><br />
 {: .notice--primary .text-justify}
 
-* ### Miguel Ángel Ruán
-
-Todos los colaboradores externos del grupo son personas estupendas y nos morimos de ganas por aprender más de él. <br /><br /><br /><br /><br /><br /><br />
-{: .notice--primary .text-justify}
 
 # Miembros antiguos
 

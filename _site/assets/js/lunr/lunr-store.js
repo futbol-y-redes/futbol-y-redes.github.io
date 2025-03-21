@@ -1,6 +1,6 @@
 var store = [,{
     "title": "Contacto",
-    "excerpt":"Nos encanta compartir ideas. Hablar de sistemas complejos. De redes. Pero, sobre todo, de fútbol. No dudes en contactar con nosotros si tienes inquietudes sobre todos estos temas. Complex Systems &amp; Sports Analytics       Laboratorio de Redes Biológicas       Centro de Tecnología Biomédica (UPM)       Campus de Montegancedo       28223 Pozuelo de Alarcón (España)...","url": "http://localhost:4000/contacto/"
+    "excerpt":"Nos encanta compartir ideas. Hablar de sistemas complejos. De redes. Pero, sobre todo, de fútbol. No dudes en contactar con nosotros si tienes inquietudes sobre todos estos temas. Complex Systems &amp; Sports Analytics       Universidad Rey Juan Carlos (URJC)       Campus de Fuenlabrada       28942 Fuenlabrada (España)       Campus de Móstoles       28933 Móstoles (España)...","url": "http://localhost:4000/contacto/"
   },{
     "title": "Complex Systems and Sports Analytics",
     "excerpt":" ","url": "http://localhost:4000/"
