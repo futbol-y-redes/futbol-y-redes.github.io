@@ -59,7 +59,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/Futbol-y-Redes"
 
-include: ["_pages"]
+include: ["_pages", "en"]
 
 # Build settings
 markdown: kramdown

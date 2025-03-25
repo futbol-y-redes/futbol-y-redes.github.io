@@ -17,7 +17,7 @@ permalink: /medios/
 > "Se les ocurrió que sería interesante analizar si el número de pases realizados durante un partido tiene algún tipo de relación con el número de goles, o si por el contrario, son variables independientes. Y para ello solo necesitaban datos".
 
 ### Revista UPM (27/05/2020): [*El bádminton es un deporte de redes (complejas)*](https://www.upm.es/?id=e244d6cf8da42710VgnVCM10000009c7648a____&prefmt=articulo&fmt=detail)
-> "Si tienes las coordenadas de las posiciones de golpeo de los jugadores a lo largo del partido, es posible construir redes bipartitas, las cuales conectan zonas de ambos lados de la pista. A partir de ahí, solo se trata de analizarlas de la forma adecuada?".
+> "Si tienes las coordenadas de las posiciones de golpeo de los jugadores a lo largo del partido, es posible construir redes bipartitas, las cuales conectan zonas de ambos lados de la pista. A partir de ahí, solo se trata de analizarlas de la forma adecuada".
 
 ### Marca (13/04/2020): [*Cómo las matemáticas podrían ayudar a La Liga a esquivar al coronavirus*](https://www.marca.com/futbol/laboratorio-datos/2020/04/13/5e9419bce2704e31668b4590.html)
 > "Incluye la red de interacción social de los jugadores dentro de su equipo, y también la probabilidad de infectarse durante un encuentro, lo que conllevaría la propagación de la enfermedad de un equipo a otro".
