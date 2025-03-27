@@ -15,7 +15,7 @@ main:
     url: /contacto/
     description: "Contáctanos."
   - title: ":uk:"
-    url: https://www.futbolyredes.com/en/index.html
+    url: /en/
     description: "Switch to English."
   - title: ":es:"
     url: /
