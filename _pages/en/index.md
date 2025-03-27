@@ -14,7 +14,7 @@ header:
   overlay_image: /assets/images/campo.gif
   actions:
     - label: "Meet us"
-      url: "/en/group/"
+      url: "/en/what-we-do/"
 excerpt: "King Juan Carlos University (URJC) <br /> [Fuenlabrada Campus](https://maps.app.goo.gl/cmeNMo9FWJqumeA96) / [Móstoles Campus](https://maps.app.goo.gl/AXTKYnZve6CeiVta7) <br /> Community of Madrid, Spain<br /> <button id='toggle-music'>i class='fas fa-spinner fa-spin'></i></button> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> "
 
 ---
