@@ -15,7 +15,7 @@ feature_row_1:
     alt: "Identificabilidad de un equipo"
     title: "Identificabilidad de un equipo"
     excerpt: "Identificar patrones en el juego de un equipo, o en el de un rival, puede ayudar a maximizar el rendimiento colectivo. En colaboración con LaLiga, hemos analizado las matrices de pases de todos los equipos de primera división para cuantificar qué equipos tienen un patron más definido. Utilizando las métricas de identificabilidad, mostramos como es posible detectar qué equipos impusieron su estilo en un partido, independientemente del resultado."
-    url: "https://newsletter.laliga.es/futbol-global/analisis-de-los-expertos-en-futbol-de-los-equipos-de-laliga"
+    url: "https://www.agenciasinc.es/Noticias/Ciencia-de-redes-para-analizar-como-juegan-los-equipos-de-futbol"
     btn_label: "Leer más"
     btn_class: "btn--primary"
   - image_path: /assets/images/pic05.jpg

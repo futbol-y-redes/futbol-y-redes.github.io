@@ -1,6 +1,6 @@
 main:
-  - title: "Quiénes somos"
-    url: /quienes-somos/
+  - title: "Qué hacemos"
+    url: /que-hacemos/
     description: "Infórmate sobre nuestro grupo."
   - title: "Proyectos"
     url: /proyectos/
@@ -15,7 +15,7 @@ main:
     url: /contacto/
     description: "Contáctanos."
   - title: ":uk:"
-    url: /en/
+    url: https://www.futbolyredes.com/en/index.html
     description: "Switch to English."
   # - title: "External Link"
   #   url: https://google.com

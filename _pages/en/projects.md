@@ -15,7 +15,7 @@ feature_row_1:
     alt: "Identifiability of a team"
     title: "Identifiability of a team"
     excerpt: "Identifying patterns in a team's game, or in that of an opponent, can help maximize collective performance. In collaboration with LaLiga, we have analyzed the passing matrices of all the first division teams to quantify which teams have a more defined pattern. Using the identifiability metrics, we show how it is possible to detect what teams imposed their style in a match, regardless of the result."
-    url: "https://newsletter.laliga.es/futbol-global/analisis-de-los-expertos-en-futbol-de-los-equipos-de-laliga"
+    url: "https://www.agenciasinc.es/Noticias/Ciencia-de-redes-para-analizar-como-juegan-los-equipos-de-futbol"
     btn_label: "Read more"
     btn_class: "btn--primary"
   - image_path: /assets/images/pic05.jpg

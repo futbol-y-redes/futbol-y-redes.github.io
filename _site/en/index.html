@@ -10,22 +10,22 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Complex Systems and Sports Analytics - Fútbol y Redes</title>
-<meta name="description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain">
+<!-- begin _includes/seo.html --><title>Complex Systems and Sports Analytics - FutbolyRedes</title>
+<meta name="description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain i class=’fas fa-spinner fa-spin’&gt;&lt;/i&gt;">
 
 
-  <meta name="author" content="Fútbol y Redes">
+  <meta name="author" content="FutbolyRedes">
   
 
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="Fútbol y Redes">
+<meta property="og:site_name" content="FutbolyRedes">
 <meta property="og:title" content="Complex Systems and Sports Analytics">
 <meta property="og:url" content="http://localhost:4000/en/">
 
 
-  <meta property="og:description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain">
+  <meta property="og:description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain i class=’fas fa-spinner fa-spin’&gt;&lt;/i&gt;">
 
 
 
@@ -57,7 +57,7 @@
 
 
 
-  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Fútbol y Redes Feed">
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="FutbolyRedes Feed">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script type="text/javascript">
@@ -96,15 +96,15 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-          <a class="site-logo" href="/"><img src="/assets/images/logo.jpeg" alt="Fútbol y Redes"></a>
+          <a class="site-logo" href="/"><img src="/assets/images/logo.jpeg" alt="FutbolyRedes"></a>
         
         <a class="site-title" href="/">
-          Fútbol y Redes
+          FutbolyRedes
           
         </a>
         <ul class="visible-links">
 <li class="masthead__menu-item">
-              <a href="/quienes-somos/" title="Infórmate sobre nuestro grupo.">Quiénes somos</a>
+              <a href="/que-hacemos/" title="Infórmate sobre nuestro grupo.">Qué hacemos</a>
             </li>
 <li class="masthead__menu-item">
               <a href="/proyectos/" title="Conoce nuestros proyectos.">Proyectos</a>
@@ -119,7 +119,7 @@
               <a href="/contacto/" title="Contáctanos.">Contacto</a>
             </li>
 <li class="masthead__menu-item">
-              <a href="/en/" title="Switch to English."><img class="emoji" title=":uk:" alt=":uk:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e7.png" height="20" width="20"></a>
+              <a href="https://www.futbolyredes.com/en/index.html" title="Switch to English."><img class="emoji" title=":uk:" alt=":uk:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f1ec-1f1e7.png" height="20" width="20"></a>
             </li>
 </ul>
         
@@ -159,7 +159,7 @@
         
       </h1>
       
-        <p class="page__lead">King Juan Carlos University (URJC) <br> Fuenlabrada Campus / Móstoles Campus <br> Community of Madrid, Spain<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+        <p class="page__lead">King Juan Carlos University (URJC) <br> <a href="https://maps.app.goo.gl/cmeNMo9FWJqumeA96">Fuenlabrada Campus</a> / <a href="https://maps.app.goo.gl/AXTKYnZve6CeiVta7">Móstoles Campus</a> <br> Community of Madrid, Spain<br> <button id="toggle-music">i class=’fas fa-spinner fa-spin’&gt;&lt;/i&gt;</button> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
 </p>
       
       
@@ -182,12 +182,69 @@
 <div id="main" role="main">
   <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Complex Systems and Sports Analytics">
-    <meta itemprop="description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain             ">
+    <meta itemprop="description" content="King Juan Carlos University (URJC)  Fuenlabrada Campus / Móstoles Campus  Community of Madrid, Spain i class=’fas fa-spinner fa-spin’&gt;&lt;/i&gt;             ">
     
     
 
     <section class="page__content" itemprop="text">
-      
+      <!---
+Botón para reproducir el audio
+-->
+<audio id="bg-music" autoplay="">
+    <source src="/assets/partido.mp3" type="audio/mpeg"></source>
+    Your browser does not support the audio element.
+</audio>
+<style>
+    #toggle-music {
+        background: transparent; /* Transparent background */
+        border: none; /* Remove button border */
+        font-size: 24px; /* Adjust icon size */
+        cursor: pointer;
+        color: white; /* Adjust color to fit your design */
+        padding: 10px;
+    }
+
+    #toggle-music:hover {
+        color: #ffcc00; /* Optional: Change color on hover */
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("bg-music");
+        var button = document.getElementById("toggle-music");
+
+        // Check if user previously paused music
+        var isPaused = localStorage.getItem("musicPaused") === "true";
+
+        function updateButton() {
+            button.innerHTML = audio.paused
+                ? '<i class="fas fa-play"></i>'  // Show Play Icon
+                : '<i class="fas fa-pause"></i>'; // Show Pause Icon
+        }
+
+        if (!isPaused) {
+            audio.play().then(updateButton).catch(() => {
+                console.log("Autoplay blocked. User must interact.");
+                updateButton();
+            });
+        } else {
+            updateButton();
+        }
+
+        button.addEventListener("click", function() {
+            if (audio.paused) {
+                audio.play();
+                localStorage.setItem("musicPaused", "false");
+            } else {
+                audio.pause();
+                localStorage.setItem("musicPaused", "true");
+            }
+            updateButton();
+        });
+    });
+</script>
+
 
     </section>
   </article>
@@ -217,33 +274,30 @@
 
 <!-- end custom footer snippets -->
         <div class="page__footer-follow">
-  <ul class="social-icons">
-    
-
-    
+    <ul class="social-icons">
+      
+  
       
         
-          <li><a href="mailto:futbolyredes@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> </a></li>
+          
+            <li><a href="mailto:futbolyredes@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> </a></li>
+          
+        
+          
+            <li><a href="https://twitter.com/FutbolyRedes" rel="nofollow noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> </a></li>
+          
+        
+          
+            <li><a href="https://github.com/Futbol-y-Redes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> </a></li>
+          
         
       
-        
-          <li><a href="https://twitter.com/FutbolyRedes" rel="nofollow noopener noreferrer"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i> </a></li>
-        
+  
       
-        
-          <li><a href="https://github.com/Futbol-y-Redes" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> </a></li>
-        
-      
-    
-
-    
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
-    
-  </ul>
-</div>
-
-<div class="page__footer-copyright">© 2025 <a href="http://localhost:4000">Fútbol y Redes</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
-
+    </ul>
+  </div>
+  
+  <div class="page__footer-copyright">© 2025 <a href="http://localhost:4000">FutbolyRedes</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
       </footer>
     </div>
 
