@@ -1,13 +1,24 @@
-Instrucciones para actualizar la página y que el menú esté en inglés cuando se selecciona el inglés:
-1. Hacer todas las actualizaciones necesarias (proyectos, noticias, miembros del grupo, etc.).
-2. En _site cambiar manualmente, a nivel de HTML, el menú superior en todas las páginas que estén en inglés. Basta con reemplazar el código que está entre las líneas especificadas aquí entre corchetes, que es el que especifica el menú superior de cada página, con el código que puedes encontrar justo aquí abajo. Los archivos a modificar son:
+**Instrucciones para actualizar la página**
+
+Existen dos formas. La primera es la más sencilla y la que recomiendo para pequeños cambios o adiciones, la segunda es más recomendable si se quiere modificar algo sustancial de la web. Si quisiera añadir un nuevo miembro, o modificar una foto, una descripción o parte de un texto, utilizaría el primer método, por ejemplo. 
+
+a)	Cambiar directamente el HTML del sitio. Ya está, no hay más truco.
+
+b)	Volver a generar la web y modificarla al generarla con Jekyll. Para ello:
+1.	Clonar el repositorio y descomprimir el archivo futbol-y-redes.github.io_completa.zip.
+2.	Instalar Jekyll (https://jekyllrb.com/docs/) y todos sus prerrequisitos siguiendo las instrucciones del link.
+3.	Ejecutar “bundle exec jekyll serve” para generar la web en local. Hacer todos los cambios necesarios. 
+4.	La ventaja de Jekyll y Minimal Mistakes (el tema usado) es que el sitio se puede desarrollar en Markdown, sin necesidad de modificar HTML. La desventaja es que no da soporte a sitios multilingües; las páginas en distintos idiomas se generan igual, pero luego no hay forma de hacer que el menú principal cambie de idioma y redireccione a las páginas adecuadas. Para solventar esto y lograr que la web esté en inglés y español, hacer Ctrl + C para dejar de correr la web en local.
+5.	**Sin Jekyll ejecutándose** (de lo contrario, todos los cambios que hagas serán sobreescritos desde la plantilla del Markdown por Jekyll), copiar y pegar los contenidos del directorio "_site" en el repositorio. Solo ese directorio contiene la web completa en HTML, con todo lo necesario para que funcione de forma autónoma. Así, estamos logrando que la web que hemos visualizado en local sea la que está subida a GitHub.
+6. En _site cambiar manualmente, a nivel de HTML, el menú superior en todas las páginas que estén en inglés. Basta con reemplazar el código que está entre las líneas especificadas aquí entre corchetes, que es el que especifica el menú superior de cada página, con el código que puedes encontrar justo aquí abajo. Los archivos a modificar son:
     * _site/en/index.html, líneas [94, 142]
     * _site/en/what-we-do/index.html, líneas [92, 140]
     * _site/en/projects/index.html, líneas [92, 140]
     * _site/en/members/index.html, líneas [92, 140]
     * _site/en/media/index.html, líneas [92, 140]
     * _site/en/contact/index.html, líneas [92, 140]
-3. ¡Ya está! Commit y push origin y deberías poder verlo en https://futbol-y-redes.github.io
+7. Comprime la web con las modificaciones y sustitúyela por futbol-y-redes.github.io-completa.zip para futuros cambios.
+8. ¡Ya está! Commit y push origin y deberías poder verlo en https://futbol-y-redes.github.io
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
