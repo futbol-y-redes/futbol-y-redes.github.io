@@ -17,7 +17,7 @@ b)	Volver a generar la web y modificarla al generarla con Jekyll. Para ello:
     * _site/en/members/index.html, líneas [92, 140]
     * _site/en/media/index.html, líneas [92, 140]
     * _site/en/contact/index.html, líneas [92, 140]
-7. Comprime la web con las modificaciones y sustitúyela por futbol-y-redes.github.io-completa.zip para futuros cambios.
+7. Comprime la web con las modificaciones y sustitúyela por futbol-y-redes.github.io_completa.zip para futuros cambios.
 8. ¡Ya está! Commit y push origin y deberías poder verlo en https://futbol-y-redes.github.io
 
 <div class="masthead">
